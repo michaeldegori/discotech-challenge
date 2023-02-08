@@ -4,7 +4,7 @@ const defaultOptions = {
 	defaultValue: null,
 };
 
-export const customFetch = async (
+export const fetchWithRetry = async (
 	url: string,
 	options: {
 		retryCount?: number;

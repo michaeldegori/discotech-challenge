@@ -1,8 +1,8 @@
-import { customFetch } from './customFetch';
+import { fetchWithRetry } from './customFetch';
 
 export const getSections = async () => {
 	try {
-		const sectionTypes: any = await customFetch(
+		const sectionTypes: any = await fetchWithRetry(
 			'https://api.discotech.me/v2/cities/4/discover',
 			{ defaultValue: [] }
 		);
@@ -15,7 +15,7 @@ export const getSections = async () => {
 export const getEventsBySection = async (sections: any) => {
 	try {
 		const eventPromises = sections.map(async (section: any) => {
-			const eventsBySection = await customFetch(section.data_url, {
+			const eventsBySection = await fetchWithRetry(section.data_url, {
 				defaultValue: [],
 			});
 			eventsBySection['section'] = section.display_name;

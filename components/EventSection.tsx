@@ -2,7 +2,7 @@ import Image from 'next/image';
 import { useRef, useState } from 'react';
 import styles from '@/styles/Home.module.css';
 import { PopulatedSection } from '@/models';
-import { customFetch } from '@/networking/customFetch';
+import { fetchWithRetry } from '@/networking/customFetch';
 
 const EventSection = ({
 	populatedSection,
@@ -20,7 +20,7 @@ const EventSection = ({
 			return;
 		}
 
-		const { data, pagination } = await customFetch(next50Url, {
+		const { data, pagination } = await fetchWithRetry(next50Url, {
 			defaultValue: {
 				data: [],
 				pagination: {},
