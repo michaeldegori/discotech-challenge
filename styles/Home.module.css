@@ -1,0 +1,45 @@
+.main {
+	padding: 0 1rem;
+}
+
+.sectionContainer {
+	display: flex;
+	overflow-x: auto;
+}
+
+.sectionHeader {
+	margin: 0.5rem 0;
+}
+
+.eventContainer {
+	border: 1px solid black;
+	border-radius: 0.5rem;
+	padding: 0.5rem;
+	margin-right: 1rem;
+	height: auto;
+	display: flex;
+	flex-direction: column;
+}
+
+.imgContainer {
+	position: relative;
+	width: 12rem;
+	height: 12rem;
+	margin-bottom: 0.5rem;
+}
+
+.img {
+	border-radius: 0.25rem;
+	object-fit: cover;
+}
+
+.venueTitleContainer {
+	width: 12rem;
+}
+
+.eventName {
+	width: 100%;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
